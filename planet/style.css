@@ -1,0 +1,112 @@
+body {
+    display: flex;
+    margin: 0;
+    overflow: hidden;
+    background: url(./planet-img/bg.png);
+    opacity: 1;
+}
+
+.side-nav {
+    width: auto;
+    color: white;
+    padding: 20px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.side-nav ul {
+    list-style: none;
+    padding: 0;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.side-nav li {
+    cursor: pointer;
+    padding: 10px;
+    position: relative;
+    transition: border-color 0.3s ease;
+}
+
+/* Create the 50% width border for each planet */
+.side-nav li::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50%;
+    border-bottom: 5px solid transparent;
+    transition: border-color 0.3s ease;
+}
+
+/* Colors for each planet */
+.side-nav li:nth-child(1)::after {
+    border-bottom: 5px solid #B0B0B0; /* Mercury's color */
+}
+
+.side-nav li:nth-child(2)::after {
+    border-bottom: 5px solid #F1C232; /* Venus' color */
+}
+
+.side-nav li:nth-child(3)::after {
+    border-bottom: 5px solid #2E8B57; /* Earth (Green) */
+}
+
+.side-nav li:nth-child(4)::after {
+    border-bottom: 5px solid #FF4500; /* Mars (Red) */
+}
+
+.side-nav li:nth-child(5)::after {
+    border-bottom: 5px solid #F4A300; /* Jupiter (Yellow) */
+}
+
+.side-nav li:nth-child(6)::after {
+    border-bottom: 5px solid #F0E68C; /* Saturn (Light Yellow) */
+}
+
+.side-nav li:nth-child(7)::after {
+    border-bottom: 5px solid #1E90FF; /* Uranus (Blue) */
+}
+
+.side-nav li:nth-child(8)::after {
+    border-bottom: 5px solid #4682B4; /* Neptune (Blue) */
+}
+
+/* Hover effect */
+.side-nav li:hover::after {
+    border-color: white;
+}
+
+.main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.planet {
+    position: absolute;
+    transition: transform 2s ease, opacity 2s ease;
+}
+
+.foreground {
+    opacity: 1;
+    width: 100%;
+    top: 375px;
+    transform: scale(1);
+}
+
+.background {
+    height: 50vh;
+    opacity: 0.5;
+    top: 0;
+    left: 35%;
+    transform: scale(0.5);
+}
